@@ -1,3 +1,38 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+:root {
+  --app-primary: #4f46e5;
+  --app-accent: #10b981;
+  --app-background: #f8fafc;
+  --app-surface: #ffffff;
+  --app-copy: #0f172a;
+  --app-copy-muted: #64748b;
+}
+
+:root.dark {
+  --app-primary: #818cf8;
+  --app-accent: #34d399;
+  --app-background: #0f172a;
+  --app-surface: #1e293b;
+  --app-copy: #f8fafc;
+  --app-copy-muted: #94a3b8;
+}
+
+@theme {
+  --color-primary: var(--app-primary);
+  --color-accent: var(--app-accent);
+  --color-background: var(--app-background);
+  --color-surface: var(--app-surface);
+  --color-copy: var(--app-copy);
+  --color-copy-muted: var(--app-copy-muted);
+}
+
+@layer base {
+  body {
+    background-color: var(--app-background);
+    color: var(--app-copy);
+    transition: background-color 0.2s, color 0.2s;
+  }
+}
