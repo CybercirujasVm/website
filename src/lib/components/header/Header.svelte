@@ -1,50 +1,61 @@
-<script>
+<script lang="ts">
+  import * as m from "$lib/paraglide/messages.js";
+
   let isMenuOpen = $state(false);
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
   }
 
-  const navLinks = [
-    { name: "Nosotros", href: "/about" },
-    { name: "Nodos", href: "/nodes" },
-    { name: "Donaciones", href: "/donations" },
-  ];
+  let navLinks = $derived([
+    { name: m.nav_about(), href: "/about" },
+    { name: m.nav_nodes(), href: "/nodes" },
+    { name: m.nav_donations(), href: "/donations" },
+    { name: m.nav_login(), href: "/login" },
+  ]);
 </script>
 
-<header
-  class="bg-background border-b-4 border-copy p-4 font-mono text-copy transition-colors duration-200"
->
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
+<header class="p-4 md:p-6 font-sans text-copy transition-colors duration-300">
+  <!-- Contenedor Principal (Barra de Navegación Estilo Cápsula Bento) -->
+  <div
+    class="max-w-7xl mx-auto flex justify-between items-center bg-surface border border-border-bento rounded-full px-6 py-3 shadow-sm"
+  >
+    <!-- Logo -->
     <a
       href="/"
-      class="text-2xl font-black tracking-tighter bg-primary text-surface px-3 py-1 border-2 border-copy shadow-[4px_4px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all"
+      class="text-2xl font-black tracking-tighter text-primary hover:text-accent transition-colors duration-300"
     >
       Cyber<span class="text-accent">Cirujas</span>
     </a>
 
-    <nav class="hidden md:flex gap-6 items-center font-bold text-lg">
+    <!-- Navegación Desktop -->
+    <nav class="hidden md:flex gap-2 items-center font-bold text-[15px]">
       {#each navLinks as link}
         <a
           href={link.href}
-          class="hover:bg-surface px-2 py-1 border-2 border-transparent hover:border-copy hover:shadow-[2px_2px_0px_var(--color-copy)] transition-all"
+          class="text-copy-muted hover:text-copy hover:bg-background px-4 py-2 rounded-2xl transition-all duration-300"
         >
           {link.name}
         </a>
       {/each}
 
+      <!-- Botón Call to Action (Súmate) -->
       <a
         href="/sumate"
-        class="bg-accent text-background px-5 py-2 border-2 border-copy shadow-[4px_4px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all"
+        class="ml-2 text-copy-on-primary bg-primary px-5 py-2 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-primary/90 transition-all duration-300"
       >
-        ¡Sumate!
+        {m.nav_join()}
       </a>
     </nav>
 
+    <!-- Botón Menú Hamburguesa (Mobile) -->
     <button
       onclick={toggleMenu}
-      class="md:hidden bg-primary text-surface p-2 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-0.75 hover:translate-x-0.75 transition-all focus:outline-none"
-      aria-label="Toggle menu"
+      class="md:hidden text-copy p-2 rounded-xl border transition-all duration-300 focus:outline-none flex items-center justify-center
+      {isMenuOpen
+        ? 'bg-background border-border-bento'
+        : 'border-transparent hover:bg-background hover:border-border-bento'}"
+      aria-label={m.nav_toggle_menu()}
     >
       {#if isMenuOpen}
         <svg
@@ -56,7 +67,7 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="3"
+            stroke-width="2.5"
             d="M6 18L18 6M6 6l12 12"
           ></path>
         </svg>
@@ -70,7 +81,7 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="3"
+            stroke-width="2.5"
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>
@@ -78,24 +89,26 @@
     </button>
   </div>
 
+  <!-- Menú Desplegable (Mobile - Caja Bento) -->
   {#if isMenuOpen}
     <nav
-      class="md:hidden mt-6 flex flex-col gap-3 font-bold text-lg border-t-4 border-copy pt-6"
+      class="md:hidden mt-4 max-w-7xl mx-auto flex flex-col gap-3 font-bold text-lg p-5 rounded-3xl bg-surface border border-border-bento shadow-sm transition-all duration-300"
     >
       {#each navLinks as link}
         <a
           href={link.href}
-          class="block bg-surface p-3 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)] active:shadow-none active:translate-y-0.75 active:translate-x-0.75 transition-all"
+          class="block text-center text-copy-muted bg-background border border-border-bento p-3 rounded-2xl hover:text-copy hover:border-border-bento-hover active:scale-[0.98] transition-all duration-200"
         >
           {link.name}
         </a>
       {/each}
 
+      <!-- CTA Desplegable -->
       <a
         href="/sumate"
-        class="block bg-accent text-background p-3 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)] active:shadow-none active:translate-y-0.75 active:translate-x-0.75 transition-all"
+        class="block text-center text-copy-on-primary bg-primary p-3 rounded-2xl shadow-sm active:scale-[0.98] transition-all duration-200 mt-1"
       >
-        ¡Sumate!
+        {m.nav_join()}
       </a>
     </nav>
   {/if}
