@@ -22,6 +22,19 @@
 		class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6"
 	>
 		<div
+			class="md:col-span-5 flex flex-col justify-center items-center relative group bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm overflow-hidden transition-colors hover:border-border-bento-hover min-h-87.5 md:min-h-full"
+		>
+			<div
+				class="relative flex items-center justify-center w-56 h-56 md:w-72 md:h-72 rounded-full bg-background border border-border-bento z-10 transition-transform duration-500 group-hover:scale-105 shadow-sm group-hover:shadow-md"
+			>
+				<span
+					class="font-black text-[90px] md:text-[120px] leading-none tracking-tighter text-primary transition-colors duration-500 select-none group-hover:text-accent"
+				>
+					CC
+				</span>
+			</div>
+		</div>
+		<div
 			class="md:col-span-7 flex flex-col gap-6 justify-center items-start bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm transition-colors hover:border-border-bento-hover"
 		>
 			<span
@@ -60,20 +73,6 @@
 						{button.label}
 					</a>
 				{/each}
-			</div>
-		</div>
-
-		<div
-			class="md:col-span-5 flex flex-col justify-center items-center relative group bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm overflow-hidden transition-colors hover:border-border-bento-hover min-h-87.5 md:min-h-full"
-		>
-			<div
-				class="relative flex items-center justify-center w-56 h-56 md:w-72 md:h-72 rounded-full bg-background border border-border-bento z-10 transition-transform duration-500 group-hover:scale-105 shadow-sm group-hover:shadow-md"
-			>
-				<span
-					class="font-black text-[90px] md:text-[120px] leading-none tracking-tighter text-primary transition-colors duration-500 select-none group-hover:text-accent"
-				>
-					CC
-				</span>
 			</div>
 		</div>
 	</div>
