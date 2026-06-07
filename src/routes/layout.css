@@ -2,31 +2,57 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+
 :root {
   --app-primary: #4f46e5;
+  --app-secondary: #334155;
   --app-accent: #10b981;
   --app-background: #f8fafc;
   --app-surface: #ffffff;
+  --app-danger: #ef4444;
+  --app-success: #22c55e;
+  --app-warning: #f59e0b;
+  --app-info: #3b82f6;
   --app-copy: #0f172a;
   --app-copy-muted: #64748b;
+  --app-copy-on-primary: #ffffff;
 }
 
 :root.dark {
-  --app-primary: #818cf8;
+  --app-primary: #6366f1;
+  --app-secondary: #475569;
   --app-accent: #34d399;
   --app-background: #0f172a;
   --app-surface: #1e293b;
+  --app-danger: #f87171;
+  --app-success: #4ade80;
+  --app-warning: #fbbf24;
+  --app-info: #60a5fa;
   --app-copy: #f8fafc;
   --app-copy-muted: #94a3b8;
+  --app-copy-on-primary: #ffffff;
 }
 
 @theme {
+  /* Brand */
   --color-primary: var(--app-primary);
+  --color-secondary: var(--app-secondary);
   --color-accent: var(--app-accent);
+
+  /* Background */
   --color-background: var(--app-background);
   --color-surface: var(--app-surface);
+
+  /* State */
+  --color-success: var(--app-success);
+  --color-danger: var(--app-danger);
+  --color-warning: var(--app-warning);
+  --color-info: var(--app-info);
+
+  /* Text */
   --color-copy: var(--app-copy);
   --color-copy-muted: var(--app-copy-muted);
+  --color-copy-on-primary: var(--app-copy-on-primary);
 }
 
 @layer base {
