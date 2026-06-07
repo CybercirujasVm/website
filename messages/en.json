@@ -9,5 +9,20 @@
   "login_title": "Sign In",
   "login_email": "Email",
   "login_submit": "Submit",
-  "login_password": "Password"
+  "login_password": "Password",
+  "footer_about_text": "Rescuing computers from the trash, fighting planned obsolescence, and advocating for free software.",
+  "footer_nav_title": "Navigation",
+  "footer_nav_manifesto": "Our Manifesto",
+  "footer_nav_activities": "Activities",
+  "footer_nav_donate": "Donate Hardware",
+  "footer_nav_faq": "FAQ",
+  "footer_social_title": "Connect",
+  "footer_social_subtitle": "Find us in the matrix:",
+  "footer_social_email": "Send email",
+  "footer_made_with": "Made with ♥, mate, and recycled hardware.",
+  "hero_status": "STATUS: OPERATIONAL",
+  "hero_title": "Reclaiming the <br class='hidden md:block' /> <span class='text-copy-on-primary inline-block px-5 py-1.5 rounded-2xl bg-primary mt-2 mb-2 shadow-sm'>Future</span> <br class='hidden md:block' /> one bit at a time.",
+  "hero_description": "We are not e-waste, we are the resistance. We repair, install Free Software, and share knowledge to liberate hardware from planned obsolescence.",
+  "hero_btn_enter": "Enter the Network",
+  "hero_btn_nodes": "Browse Nodes"
 }

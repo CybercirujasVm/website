@@ -1,16 +1,18 @@
-<script>
-	const actionButtons = [
+<script lang="ts">
+	import * as m from "$lib/paraglide/messages.js";
+
+	let actionButtons = $derived([
 		{
-			label: "Entrar a la Red",
+			label: m.hero_btn_enter(),
 			href: "/#",
 			isPrimary: true,
 		},
 		{
-			label: "Buscar Nodos",
+			label: m.hero_btn_nodes(),
 			href: "/nodes",
 			isPrimary: false,
 		},
-	];
+	]);
 </script>
 
 <section
@@ -28,20 +30,13 @@
 				<span
 					class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_var(--color-accent)]"
 				></span>
-				ESTADO: OPERATIVO
+				{m.hero_status()}
 			</span>
 
 			<h1
 				class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-snug"
 			>
-				Recuperando el <br class="hidden md:block" />
-				<span
-					class="text-copy-on-primary inline-block px-5 py-1.5 rounded-2xl bg-primary mt-2 mb-2 shadow-sm"
-				>
-					Futuro
-				</span>
-				<br class="hidden md:block" />
-				un bit a la vez.
+				{@html m.hero_title()}
 			</h1>
 
 			<div
@@ -50,9 +45,7 @@
 				<p
 					class="text-base md:text-lg font-medium leading-relaxed text-copy-muted"
 				>
-					No somos basura tecnológica, somos la resistencia. Reparamos,
-					instalamos Software Libre y compartimos conocimiento para liberar al
-					hardware de la obsolescencia.
+					{m.hero_description()}
 				</p>
 			</div>
 
@@ -60,8 +53,7 @@
 				{#each actionButtons as button}
 					<a
 						href={button.href}
-						class="flex-1 sm:flex-none text-center text-base md:text-lg font-bold px-8 py-4 rounded-xl transition-all duration-200
-                        {button.isPrimary
+						class="flex-1 sm:flex-none text-center text-base md:text-lg font-bold px-8 py-4 rounded-xl transition-all duration-200 {button.isPrimary
 							? 'text-copy-on-primary bg-primary hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5'
 							: 'text-copy bg-surface border border-border-bento hover:border-border-bento-hover hover:bg-background shadow-sm hover:shadow-md hover:-translate-y-0.5'}"
 					>
@@ -74,11 +66,6 @@
 		<div
 			class="md:col-span-5 flex flex-col justify-center items-center relative group bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm overflow-hidden transition-colors hover:border-border-bento-hover min-h-87.5 md:min-h-full"
 		>
-			<div
-				class="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
-				style="background-image: radial-gradient(var(--color-border-bento-hover) 2px, transparent 2px); background-size: 24px 24px;"
-			></div>
-
 			<div
 				class="relative flex items-center justify-center w-56 h-56 md:w-72 md:h-72 rounded-full bg-background border border-border-bento z-10 transition-transform duration-500 group-hover:scale-105 shadow-sm group-hover:shadow-md"
 			>
