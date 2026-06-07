@@ -1,8 +1,10 @@
+import { i18n } from '$lib/i18n'
+import { sequence } from '@sveltejs/kit/hooks'
 import { createServerClient } from '@supabase/ssr'
 import { redirect, type Handle } from '@sveltejs/kit'
 import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY } from '$env/static/public'
 
-export const handle: Handle = async ({ event, resolve }) => {
+const supabaseHandle: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY, {
     cookies: {
       getAll: () => event.cookies.getAll(),
@@ -40,3 +42,5 @@ export const handle: Handle = async ({ event, resolve }) => {
     },
   })
 }
+
+export const handle = sequence(i18n.handle(), supabaseHandle)

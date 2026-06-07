@@ -14,79 +14,80 @@
 </script>
 
 <section
-	class="bg-background p-6 md:p-12 font-mono text-copy overflow-hidden transition-colors duration-200"
+	class="bg-background p-4 md:p-8 font-sans text-copy min-h-[85vh] flex items-center transition-colors duration-300"
 >
 	<div
-		class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-4 border-copy bg-surface p-8 md:p-16 shadow-[8px_8px_0px_var(--color-copy)] transition-colors duration-200"
+		class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6"
 	>
 		<div
-			class="flex justify-center items-center relative group order-2 md:order-1"
+			class="md:col-span-7 flex flex-col gap-6 justify-center items-start bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm transition-colors hover:border-border-bento-hover"
 		>
-			<div
-				class="absolute -inset-4 grid grid-cols-6 gap-2 opacity-20 group-hover:opacity-40 transition-opacity"
-			>
-				{#each Array(24) as _}
-					<div class="w-2 h-2 bg-copy rounded-full"></div>
-				{/each}
-			</div>
-
-			<div
-				class="relative bg-primary text-surface font-black text-[120px] md:text-[180px] leading-none tracking-tighter px-6 py-2 border-4 border-copy shadow-[12px_12px_0px_var(--color-copy)] transform group-hover:-translate-y-2 group-hover:-translate-x-2 group-hover:shadow-[20px_20px_0px_var(--color-copy)] transition-all duration-150 ease-in-out select-none"
-				style="font-family: 'Archivo Black', sans-serif;"
-			>
-				CC
-				<span
-					class="absolute top-0 left-0 w-full h-full text-accent opacity-0 group-hover:opacity-70 group-hover:animate-pulse transition-all"
-					aria-hidden="true"
-				>
-					CC
-				</span>
-			</div>
-		</div>
-
-		<div class="flex flex-col gap-6 items-start order-1 md:order-2">
 			<span
-				class="inline-block bg-accent text-background text-sm font-bold px-3 py-1 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)]"
+				class="inline-flex items-center gap-3 text-accent text-sm font-bold px-4 py-2 rounded-full border border-border-bento bg-background"
 			>
-				// ESTADO: OPERATIVO
+				<span
+					class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_var(--color-accent)]"
+				></span>
+				ESTADO: OPERATIVO
 			</span>
 
 			<h1
-				class="text-4xl md:text-6xl font-extrabold tracking-tight leading-none"
+				class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-snug"
 			>
-				Recuperando el <span
-					class="bg-primary text-surface px-2 border-2 border-copy inline-block"
-					>Futuro</span
-				> un bit a la vez.
+				Recuperando el <br class="hidden md:block" />
+				<span
+					class="text-copy-on-primary inline-block px-5 py-1.5 rounded-2xl bg-primary mt-2 mb-2 shadow-sm"
+				>
+					Futuro
+				</span>
+				<br class="hidden md:block" />
+				un bit a la vez.
 			</h1>
 
 			<div
-				class="bg-background p-4 border-2 border-copy shadow-[4px_4px_0px_var(--color-copy)] max-w-lg"
+				class="p-6 rounded-2xl bg-background border border-border-bento w-full transition-colors hover:border-border-bento-hover"
 			>
-				<p class="text-lg font-bold leading-relaxed">
+				<p
+					class="text-base md:text-lg font-medium leading-relaxed text-copy-muted"
+				>
 					No somos basura tecnológica, somos la resistencia. Reparamos,
 					instalamos Software Libre y compartimos conocimiento para liberar al
 					hardware de la obsolescencia.
 				</p>
 			</div>
 
-			<div class="flex flex-wrap gap-4 mt-4">
+			<div class="flex flex-wrap gap-4 mt-2 w-full sm:w-auto">
 				{#each actionButtons as button}
 					<a
 						href={button.href}
-						class="text-xl font-bold px-8 py-3 border-2 border-copy shadow-[5px_5px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all
+						class="flex-1 sm:flex-none text-center text-base md:text-lg font-bold px-8 py-4 rounded-xl transition-all duration-200
                         {button.isPrimary
-							? 'bg-primary text-surface active:opacity-80'
-							: 'bg-surface text-copy hover:bg-accent hover:text-background active:opacity-80'}"
+							? 'text-copy-on-primary bg-primary hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5'
+							: 'text-copy bg-surface border border-border-bento hover:border-border-bento-hover hover:bg-background shadow-sm hover:shadow-md hover:-translate-y-0.5'}"
 					>
 						{button.label}
 					</a>
 				{/each}
 			</div>
 		</div>
+
+		<div
+			class="md:col-span-5 flex flex-col justify-center items-center relative group bg-surface p-8 md:p-12 rounded-3xl border border-border-bento shadow-sm overflow-hidden transition-colors hover:border-border-bento-hover min-h-87.5 md:min-h-full"
+		>
+			<div
+				class="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+				style="background-image: radial-gradient(var(--color-border-bento-hover) 2px, transparent 2px); background-size: 24px 24px;"
+			></div>
+
+			<div
+				class="relative flex items-center justify-center w-56 h-56 md:w-72 md:h-72 rounded-full bg-background border border-border-bento z-10 transition-transform duration-500 group-hover:scale-105 shadow-sm group-hover:shadow-md"
+			>
+				<span
+					class="font-black text-[90px] md:text-[120px] leading-none tracking-tighter text-primary transition-colors duration-500 select-none group-hover:text-accent"
+				>
+					CC
+				</span>
+			</div>
+		</div>
 	</div>
 </section>
-
-<style>
-	@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
-</style>

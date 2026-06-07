@@ -16,6 +16,6 @@ export const actions = {
       return fail(400, { error: 'Credenciales inválidas' })
     }
 
-    throw redirect(303, '/backoffice')
+    throw redirect(303, '/backoffice/inventory')
   }
 } satisfies Actions

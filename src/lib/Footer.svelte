@@ -27,87 +27,101 @@
 			name: "Enviar correo",
 			href: "mailto:cybercirujas@disroot.com",
 			svgPath:
-				'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />',
+				'<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z" />',
 			isFill: false,
 		},
 	];
 </script>
 
 <footer
-	class="bg-background border-t-4 border-copy p-8 md:p-12 font-mono text-copy mt-12 overflow-hidden transition-colors duration-200"
+	class="bg-background p-4 md:p-8 text-copy mt-8 overflow-hidden transition-colors duration-300 font-sans"
 >
-	<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-		<div class="flex flex-col items-start gap-4">
-			<a
-				href="/"
-				class="text-2xl font-black tracking-tighter bg-primary text-surface px-3 py-1 border-2 border-copy shadow-[4px_4px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all"
+	<div class="max-w-7xl mx-auto flex flex-col gap-4 md:gap-6">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+			<div
+				class="flex flex-col items-start gap-6 bg-surface p-8 rounded-3xl border border-border-bento transition-colors hover:border-border-bento-hover shadow-sm"
 			>
-				Cyber<span class="text-accent">Cirujas</span>
-			</a>
-			<p
-				class="font-bold text-sm leading-relaxed max-w-xs mt-2 bg-surface text-copy p-3 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)]"
-			>
-				Rescatando computadoras de la basura, combatiendo la obsolescencia
-				programada y militando el software libre.
-			</p>
-		</div>
-
-		<div class="flex flex-col gap-3 font-bold">
-			<h3
-				class="text-xl bg-primary text-surface inline-block px-2 border-2 border-copy w-max shadow-[2px_2px_0px_var(--color-copy)] mb-2"
-			>
-				Navegación
-			</h3>
-
-			{#each navLinks as link}
 				<a
-					href={link.href}
-					class="hover:text-accent hover:underline decoration-2 hover:translate-x-1 transition-transform w-max"
+					href="/"
+					class="text-2xl font-black tracking-tighter text-primary hover:text-accent transition-colors duration-300"
 				>
-					► {link.name}
+					Cyber<span class="text-accent">Cirujas</span>
 				</a>
-			{/each}
-		</div>
+				<p
+					class="font-medium text-base md:text-sm leading-relaxed text-copy-muted"
+				>
+					Rescatando computadoras de la basura, combatiendo la obsolescencia
+					programada y militando el software libre.
+				</p>
+			</div>
 
-		<div class="flex flex-col gap-3 font-bold">
-			<h3
-				class="text-xl bg-accent text-background inline-block px-2 border-2 border-copy w-max shadow-[2px_2px_0px_var(--color-copy)] mb-2"
+			<div
+				class="flex flex-col gap-5 bg-surface p-8 rounded-3xl border border-border-bento transition-colors hover:border-border-bento-hover shadow-sm"
 			>
-				Conectate
-			</h3>
-			<p class="text-sm mb-1 text-copy-muted">Encontranos en la matrix:</p>
+				<h3 class="text-lg font-bold text-copy">Navegación</h3>
 
-			<div class="flex gap-4">
-				{#each socialLinks as social}
-					<a
-						href={social.href}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="bg-surface text-copy p-2 border-2 border-copy shadow-[3px_3px_0px_var(--color-copy)] hover:shadow-none hover:translate-y-0.75 hover:translate-x-0.75 transition-all"
-						aria-label={social.name}
-					>
-						<svg
-							class="w-6 h-6"
-							fill={social.isFill ? "currentColor" : "none"}
-							stroke={!social.isFill ? "currentColor" : "none"}
-							viewBox="0 0 24 24"
+				<div class="flex flex-col gap-3">
+					{#each navLinks as link}
+						<a
+							href={link.href}
+							class="flex items-center gap-3 text-copy-muted hover:text-copy px-4 py-3 rounded-2xl bg-background border border-border-bento hover:border-border-bento-hover transition-all duration-300 active:scale-[0.98]"
 						>
-							{@html social.svgPath}
-						</svg>
-					</a>
-				{/each}
+							<span class="w-2 h-2 rounded-full bg-accent"></span>
+							{link.name}
+						</a>
+					{/each}
+				</div>
+			</div>
+
+			<div
+				class="flex flex-col gap-5 bg-surface p-8 rounded-3xl border border-border-bento transition-colors hover:border-border-bento-hover shadow-sm"
+			>
+				<div class="flex flex-col gap-1">
+					<h3 class="text-lg font-bold text-copy">Conectate</h3>
+					<p class="text-sm text-copy-muted">Encontranos en la matrix:</p>
+				</div>
+
+				<div class="flex flex-wrap gap-4 mt-2">
+					{#each socialLinks as social}
+						<a
+							href={social.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="bg-background text-copy p-4 rounded-2xl border border-border-bento hover:border-border-bento-hover hover:-translate-y-1 hover:text-accent hover:shadow-md transition-all duration-300 flex items-center justify-center"
+							aria-label={social.name}
+						>
+							<svg
+								class="w-6 h-6"
+								fill={social.isFill ? "currentColor" : "none"}
+								stroke={!social.isFill ? "currentColor" : "none"}
+								viewBox="0 0 24 24"
+							>
+								{@html social.svgPath}
+							</svg>
+						</a>
+					{/each}
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div
-		class="max-w-7xl mx-auto mt-12 pt-6 border-t-4 border-dashed border-copy-muted/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold"
-	>
-		<p class="flex items-center gap-2">
-			<span class="text-xl">🄯</span> Copyleft {currentYear} CyberCirujas.
-		</p>
-		<p class="bg-copy text-background px-3 py-1">
-			Hecho con <span class="text-accent">♥</span>, mate y hardware reciclado.
-		</p>
+		<div
+			class="p-6 md:p-8 rounded-3xl bg-surface border border-border-bento shadow-sm flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-copy-muted transition-colors hover:border-border-bento-hover"
+		>
+			<p class="flex items-center gap-3">
+				<span
+					class="text-lg rounded-full w-10 h-10 flex items-center justify-center bg-background border border-border-bento text-primary font-black"
+				>
+					🄯
+				</span>
+				Copyleft {currentYear} CyberCirujas.
+			</p>
+
+			<p
+				class="px-6 py-3 rounded-2xl bg-background border border-border-bento text-center md:text-left"
+			>
+				Hecho con <span class="text-accent animate-pulse">♥</span>, mate y
+				hardware reciclado.
+			</p>
+		</div>
 	</div>
 </footer>

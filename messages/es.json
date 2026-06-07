@@ -1,0 +1,13 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "nav_about": "Nosotros",
+  "nav_nodes": "Nodos",
+  "nav_donations": "Donaciones",
+  "nav_login": "Iniciar sesión",
+  "nav_join": "¡Sumate!",
+  "nav_toggle_menu": "Alternar menú",
+  "login_title": "Iniciar Sesión",
+  "login_email": "Correo electrónico",
+  "login_submit": "Enviar",
+  "login_password": "Contraseña"
+}
