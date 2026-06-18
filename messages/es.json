@@ -9,5 +9,20 @@
   "login_title": "Iniciar Sesión",
   "login_email": "Correo electrónico",
   "login_submit": "Enviar",
-  "login_password": "Contraseña"
+  "login_password": "Contraseña",
+  "footer_about_text": "Rescatando computadoras de la basura, combatiendo la obsolescencia programada y militando el software libre.",
+  "footer_nav_title": "Navegación",
+  "footer_nav_manifesto": "Nuestro Manifiesto",
+  "footer_nav_activities": "Actividades",
+  "footer_nav_donate": "Doná Hardware",
+  "footer_nav_faq": "Preguntas Frecuentes",
+  "footer_social_title": "Conectate",
+  "footer_social_subtitle": "Encontranos en la matrix:",
+  "footer_social_email": "Enviar correo",
+  "footer_made_with": "Hecho con ♥, mate y hardware reciclado.",
+  "hero_status": "ESTADO: OPERATIVO",
+  "hero_title": "Recuperando el <br class='hidden md:block' /> <span class='text-copy-on-primary inline-block px-5 py-1.5 rounded-2xl bg-primary mt-2 mb-2 shadow-sm'>Futuro</span> <br class='hidden md:block' /> un bit a la vez.",
+  "hero_description": "No somos basura tecnológica, somos la resistencia. Reparamos, instalamos Software Libre y compartimos conocimiento para liberar al hardware de la obsolescencia.",
+  "hero_btn_enter": "Entrar a la Red",
+  "hero_btn_nodes": "Buscar Nodos"
 }

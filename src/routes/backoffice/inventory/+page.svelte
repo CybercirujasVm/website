@@ -26,9 +26,9 @@
       <button
         type="button"
         onclick={() => (showForm = true)}
-        class="text-sm font-bold text-copy-on-primary px-6 py-3 rounded-2xl bg-primary shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shrink-0"
+        class="text-base font-bold text-copy-on-primary px-6 py-3 rounded-2xl bg-primary shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shrink-0"
       >
-        + Agregar Hardware
+        {"+ Agregar Hardware"}
       </button>
     {/if}
   </div>
