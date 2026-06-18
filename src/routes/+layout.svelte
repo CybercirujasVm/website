@@ -1,13 +1,17 @@
 <script lang="ts">
+  import "./layout.css";
   import { ParaglideJS } from "@inlang/paraglide-sveltekit";
   import { i18n } from "$lib/i18n";
 
-  import "./layout.css";
   import favicon from "$lib/assets/favicon.svg";
-  import Header from "$lib/components/header/Header.svelte";
   import Footer from "$lib/Footer.svelte";
+  import Header from "$lib/components/Header.svelte";
+  import type { LayoutData } from "./$types";
 
-  let { children } = $props();
+  let {
+    data,
+    children,
+  }: { data: LayoutData; children: import("svelte").Snippet } = $props();
 </script>
 
 <svelte:head>
@@ -16,7 +20,7 @@
 
 <ParaglideJS {i18n}>
   <div class="flex flex-col min-h-screen">
-    <Header />
+    <Header session={data.session} />
 
     <main class="grow">
       {@render children()}
